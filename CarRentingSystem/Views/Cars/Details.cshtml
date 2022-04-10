@@ -1,0 +1,56 @@
+﻿@model CarDetailsServiceModel
+
+<div class="col-md-6 offset-3">
+    <h2>@Model.Brand @Model.Model</h2>
+	<p>@Model.Description </p>
+	<img class="d-block w-100" src="@Model.ImageUrl" alt="@Model.Brand @Model.Model">
+
+     <p>@Model.Year: Year of manufacture <p>
+	<div class="row">
+    <div class="col-12 text-right">  
+    </div>
+   </div>
+    
+    <p>@Model.Price  $/Per day</p>
+	<div class="row">
+    <div class="col-12 text-center">  
+        <button class="btn btn-primary" id="form-button">Reservation</button>
+    </div>
+   </div>
+  
+
+
+</div>
+
+<div class="jumbotron d-none" id="form">
+    <div class="row">
+        Dadasd
+        <button class="btn btn-primary" id="Clear-button">Clear</button>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $('#Clear-button').on('click', ev => {
+          $('#form').addClass('d-none');
+                $('#form-button').show();
+                });
+       
+                
+                
+                $('#form-button').on('click', ev => {
+                  $('#form').removeClass('d-none');
+                     $('#form-button').hide();
+           /* $.get('/api/statistics', (data) => {
+                $('#total-cars').text(data.totalCars + " Cars");
+                $('#total-users').text(data.totalUsers + " Users");
+                $('#total-rents').text(data.totalRents + " Rents");
+
+                $('#statistics').removeClass('d-none');
+                $('#statistics-button').hide();
+            });*/
+        });
+    </script>
+}
+
+</div>
